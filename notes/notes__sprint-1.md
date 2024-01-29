@@ -1,6 +1,6 @@
 # Sprint-1
 
-## Set-Up Development Environment
+## 1. Set-Up Development Environment
 
 ### Create a new project repository on GitHub
 
@@ -22,7 +22,7 @@
 
 ### Project structure
 
-- [ ] Organize your project directory structure. Common directories include "src" for source code, "public" for static assets, and "docs" for documentation.
+- [x] Organize your project directory structure. Common directories include "src" for source code, "public" for static assets, and "docs" for documentation.
 - [x] Create any necessary configuration files, such as package.json for Node.js project dependencies.
 
 ### Install node_modules
