@@ -2,9 +2,9 @@
 
 **Sprint 1: January 24 - [ ] January 31, 2024 (1 week)**
 
-- [ ] **Set Up Development Environment (1 day)**
+- [x] **Set Up Development Environment (1 day)**
   - [x] Create a new project repository on a platform like GitHub.
-  - [ ] Configure your IDE, version control, and project structure.
+  - [x] Configure your IDE, version control, and project structure.
 
 - [ ] **Backend Development - Data Fetching (3 days)**
   - [ ] Set up a Node.js and Express.js server.
