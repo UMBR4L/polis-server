@@ -28,3 +28,28 @@
 ### Install node_modules
 
 - [x] Once your project repository is set up, and you have a basic project structure in place, you can install node_modules by running `npm install` or `yarn install`. This step is typically done after your project's initial setup.
+
+
+## 2. **Backend Development - Data Fetching (3 days)**
+  - [x] Set up a Node.js and Express.js server.
+    - [x] Install Node.js if not already installed.
+    - [x] Create a new Node.js project folder.
+    - [x] Initialize a Node.js project using `npm init`.
+    - [x] Install Express.js as a dependency.
+    - [x] Create a `server.js` file as the main entry point.
+    - [x] Set up a basic Express server with routing.
+  - [ ] Create endpoints to fetch data from the Canadian Parliament's website.
+    - [ ] Define routes for bill data retrieval.
+    - [ ] Set up route handlers for bill endpoints.
+    - [ ] Establish communication with the OpenParliament API.
+    - [ ] Fetch bill data from the API using HTTP requests.
+  - [ ] **Subtasks:**
+    - [ ] Set up Express.js for routing.
+      - [ ] Create a `routes` folder for route definitions.
+      - [ ] Define route handlers for bill-related endpoints.
+      - [ ] Connect route handlers to the Express app.
+    - [ ] Research and implement web scraping techniques to extract data.
+      - [ ] Explore web scraping libraries for Node.js.
+      - [ ] Choose a suitable library or module for web scraping.
+      - [ ] Write code to scrape bill data from the website.
+      - [ ] Test the web scraping functionality.
