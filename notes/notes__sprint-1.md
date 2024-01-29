@@ -27,4 +27,4 @@
 
 ### Install node_modules
 
-- [ ] Once your project repository is set up, and you have a basic project structure in place, you can install node_modules by running `npm install` or `yarn install`. This step is typically done after your project's initial setup.
+- [x] Once your project repository is set up, and you have a basic project structure in place, you can install node_modules by running `npm install` or `yarn install`. This step is typically done after your project's initial setup.
