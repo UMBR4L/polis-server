@@ -1,8 +1,8 @@
 1. API Aggregation and Enhancement:
 Use OpenParliament API: Start by fetching the available bill information from the OpenParliament API.
 Enhance Data: Since OpenParliament provides only basic details with legal jargon, you could enhance this data by:
-Manual Curation: For a select number of bills, manually curate additional information like "Pros", "Cons", etc. This would not be scalable but could serve as a demonstration of the app's capabilities.
-    - can manually download the .json for a sample set of bills from parl.ca
+    - scrape the .json for a sample set of bills from parl.ca
+<!-- Manual Curation: For a select number of bills, manually curate additional information like "Pros", "Cons", etc. This would not be scalable but could serve as a demonstration of the app's capabilities. -->
 Automated Summarization: Use a text summarization API or build a simple GPT-based model to translate legal jargon into simple English.
 
 2. Database Integration:

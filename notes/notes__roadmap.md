@@ -7,11 +7,11 @@
   - [x] Configure your IDE, version control, and project structure.
 
 - [ ] **Backend Development - Data Fetching (3 days)**
-  - [ ] Set up a Node.js and Express.js server.
+  - [x] Set up a Node.js and Express.js server.
   - [ ] Create endpoints to fetch data from the Canadian Parliament's website.
   - [ ] Subtasks:
-    - [ ] Initialize a Node.js project.
-    - [ ] Set up Express.js for routing.
+    - [x] Initialize a Node.js project.
+    - [x] Set up Express.js for routing.
     - [ ] Research and implement web scraping techniques to extract data.
 
 - [ ] **Initial UI Implementation (3 days)**
