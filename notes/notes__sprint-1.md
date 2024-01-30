@@ -41,10 +41,10 @@
   - [ ] Create endpoints to fetch data from the Canadian Parliament's website.
     - [ ] Define routes for bill data retrieval.
     - [ ] Set up route handlers for bill endpoints.
-    - [ ] Establish communication with the OpenParliament API.
-    - [ ] Fetch bill data from the API using HTTP requests.
+    - [x] Establish communication with the OpenParliament API.
+    - [x] Fetch bill data from the API using HTTP requests.
   - [ ] **Subtasks:**
-    - [ ] Set up Express.js for routing.
+    - [x] Set up Express.js for routing.
       - [ ] Create a `routes` folder for route definitions.
       - [ ] Define route handlers for bill-related endpoints.
       - [ ] Connect route handlers to the Express app.
