@@ -7,9 +7,9 @@ Automated Summarization: Use a text summarization API or build a simple GPT-base
 
 2. Database Integration:
 Store the enhanced bill data in a database. This allows you to:
-Cache the data fetched from OpenParliament.
-Store additional information you've curated or generated.
-Database Choice: Use a NoSQL database like MongoDB if your data structure is more JSON-like, or a SQL database if you need relational data structuring.
+    - Cache the data fetched from OpenParliament.
+    - Store additional information you've curated or generated.
+    - Database Choice: Use a NoSQL database like MongoDB if your data structure is more JSON-like, or a SQL database if you need relational data structuring.
 
 3. React Client-Side Application:
 Interactive UI: Create an interface where users can browse through bills.

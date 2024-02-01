@@ -45,11 +45,7 @@
     - [x] Fetch bill data from the API using HTTP requests.
   - [ ] **Subtasks:**
     - [x] Set up Express.js for routing.
-      - [ ] Create a `routes` folder for route definitions.
+      - [x] Create a `routes` folder for route definitions.
       - [ ] Define route handlers for bill-related endpoints.
       - [ ] Connect route handlers to the Express app.
-    - [ ] Research and implement web scraping techniques to extract data.
-      - [ ] Explore web scraping libraries for Node.js.
-      - [ ] Choose a suitable library or module for web scraping.
-      - [ ] Write code to scrape bill data from the website.
-      - [ ] Test the web scraping functionality.
+
