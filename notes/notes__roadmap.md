@@ -7,7 +7,7 @@
   - [x] Create a new project repository on a platform like GitHub.
   - [x] Configure your IDE, version control, and project structure.
 
-- [ ] **Backend Development - Data Fetching (3 days)**
+- [x] **Backend Development - Data Fetching (3 days)**
 
   - [x] Set up a Node.js and Express.js server.
   - [x] Create endpoints to fetch data from the Canadian Parliament's website.
