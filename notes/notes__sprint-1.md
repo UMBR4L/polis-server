@@ -38,14 +38,14 @@
     - [x] Install Express.js as a dependency.
     - [x] Create a `server.js` file as the main entry point.
     - [x] Set up a basic Express server with routing.
-  - [ ] Create endpoints to fetch data from the Canadian Parliament's website.
-    - [ ] Define routes for bill data retrieval.
-    - [ ] Set up route handlers for bill endpoints.
+  - [x] Create endpoints to fetch data from the Canadian Parliament's website.
+    - [x] Define routes for bill data retrieval.
+    - [x] Set up route handlers for bill endpoints.
     - [x] Establish communication with the OpenParliament API.
     - [x] Fetch bill data from the API using HTTP requests.
-  - [ ] **Subtasks:**
+  - [x] **Subtasks:**
     - [x] Set up Express.js for routing.
       - [x] Create a `routes` folder for route definitions.
-      - [ ] Define route handlers for bill-related endpoints.
-      - [ ] Connect route handlers to the Express app.
+      - [x] Define route handlers for bill-related endpoints.
+      - [x] Connect route handlers to the Express app.
 
