@@ -16,25 +16,32 @@
     - [x] Set up Express.js for routing.
 
 - [ ] **Initial UI Implementation (3 days)**
-  - [ ] Implement the basic user interface for listing active bills.
-  - [ ] Subtasks:
-    - [ ] Create the bill listing component.
+  - [x] Design the basic user interface for listing active bills.
+    - [x] Create wireframes or mockups for the bill listing component.
+    - [x] Define the visual style and layout of the component.
+  - [ ] Implement the bill listing component.
     - [ ] Display bill data retrieved from the backend.
+    - [ ] Ensure responsive design for various screen sizes.
+  - [ ] Set up navigation for accessing bill details.
+  - [ ] Integrate basic user interactions (e.g., click events).
 
 **Sprint 2: February 1 - [ ] February 4, 2024 (4 days)**
 
 - [ ] **GPT Integration (2 days)**
-
   - [ ] Integrate your custom GPT model for generating simple-English descriptions of bills.
-  - [ ] Subtasks:
     - [ ] Set up a dedicated GPT server or API.
     - [ ] Implement a communication layer between the frontend and the GPT server.
+  - [ ] Test GPT integration with sample bill descriptions.
+  - [ ] Handle GPT-generated descriptions in the UI.
+    - [ ] Update the bill details component to display GPT-enhanced descriptions.
 
 - [ ] **Enhance Bill Details Page (2 days)**
   - [ ] Improve the bill details page with descriptions, purposes, consequences, and latest votes.
-  - [ ] Subtasks:
-    - [ ] Create the bill details component.
-    - [ ] Retrieve and display detailed bill information.
+  - [ ] Create wireframes or mockups for the enhanced bill details page.
+  - [ ] Implement the bill details component.
+    - [ ] Retrieve and display detailed bill information, including GPT-generated descriptions.
+  - [ ] Enhance user interactions on the bill details page.
+  - [ ] Ensure that voting status and progress information is included.
 
 **Sprint 3: February 5 - [ ] February 7, 2024 (3 days)**
 
@@ -55,8 +62,9 @@
     - [ ] Implement posting and commenting functionality.
 
 - [ ] **Final Testing and Bug Fixes (1 day)**
-  - [ ] Conduct a final round of testing to ensure all features work smoothly.
-  - [ ] Address any remaining issues or bugs.
+  - [ ] Conduct thorough testing of GPT integration and enhanced bill details.
+  - [ ] Verify that GPT-generated descriptions are accurate and helpful.
+  - [ ] Address any issues or discrepancies in the bill details page.
 
 ## Endpoints
 
@@ -138,6 +146,7 @@
          }
        ]
      } -->
+
      ```
 
 ## Nice-to-Haves
