@@ -1,0 +1,6 @@
+- run "npm i" and "npm start"
+- fill out .env based on .env.sample
+- log in to mysql
+    - run "mysql -u root -p rootroot"
+- create and use the polis database polis_db
+    - run knex migrate:make create_database
