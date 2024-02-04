@@ -15,6 +15,7 @@ exports.seed = async function (knex) {
 
     // Fetch data from the API using the specified filter
     const fetchedData = await fetchBillsFromAPI(filterName);
+    fetchedData.sort((a, b) => new Date(b.introduced) - new Date(a.introduced));
 
     // Insert the fetched data into your database table
     await knex("bills").insert(fetchedData);
