@@ -1,4 +1,4 @@
-const OpenAI = require("openai");
+const axios = require("axios");
 const express = require("express");
 const router = express.Router();
 const dotenv = require("dotenv");
@@ -6,7 +6,11 @@ dotenv.config(); // Load environment variables from .env
 const knex = require("knex");
 const knexfile = require("../../knexfile.js");
 
-// Create a database connection using your knexfile
+// Import the utility function
+const cleanUpJson = require("../utils/clean-up-json.js");
+const { simplifyLanguage } = require("../utils/openai.js");
+
+// // Create a database connection using your knexfile
 const db = knex(knexfile);
 
 router.get("/openai", async (req, res) => {
@@ -14,8 +18,6 @@ router.get("/openai", async (req, res) => {
     const OPEN_AI_API_KEY = process.env.OPEN_AI_API_KEY;
 
     const { billNumber, session } = req.query; // Extract the billNumber query parameter
-
-    const openai = new OpenAI({ apiKey: OPEN_AI_API_KEY });
 
     // Fetch bill data from the database based on billNumber and session
     const billData = await db("bills")
@@ -38,16 +40,18 @@ router.get("/openai", async (req, res) => {
       assistantContent += ` from the ${session} session of parliament.`;
     }
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+    // Define the request data for the OpenAI API
+    const requestData = {
+      model: "gpt-3.5-turbo-0125",
+      response_format: { type: "json_object" },
       messages: [
         {
           role: "system",
-          content: `You are an AI system specialized in providing information about Canadian parliamentary bills. Your responses should be clear, concise, and tailored for a 7th-grade comprehension level. Your first task is to correctly locate the specified bill by the assistant on Bing. Once confirmed, conduct thorough research using the bill text. Afterward, generate a minimal Dall-E image to visually represent bill themes. Finally, present structured information comprising the Dall-E image, proposed changes, bill intent, pros, cons, and voting status, organized into sections. In addition to this, when users request it, you can provide a list of bills from the current session of parliament.`,
+          content: `You are an AI system specialized in providing extensive, accurate, and organized information about Canadian parliamentary bills. Your responses should always produce JSON with the following keys and relevant values: 'Intent', 'Proposed Changes', 'Pros', 'Cons', 'Progress'. Your responses should be comprehensive with multiple bullet points per section. Your first task is to accurately locate the specified bill by the assistant on "parl.ca". Once confirmed, conduct thorough research using the bill text on LegisInfo and provide an extensive analysis of its content.`,
         },
         {
           role: "assistant",
-          content: assistantContent,
+        content: `${assistantContent} Your bullet points for "Proposed Changes", "Pros", and "Cons" should be specific and comprehensive.` ,
         },
         {
           role: "user",
@@ -56,13 +60,32 @@ router.get("/openai", async (req, res) => {
       ],
       temperature: 0.5,
       seed: 1,
-      max_tokens: 500,
+      max_tokens: 1000,
       top_p: 0.5,
       frequency_penalty: 0,
       presence_penalty: 0,
-    });
+    };
 
-    res.json(response.choices[0].message.content);
+    // Make an Axios POST request to the OpenAI API
+    const response = await axios.post(
+      "https://api.openai.com/v1/chat/completions",
+      requestData,
+      {
+        headers: {
+          Authorization: `Bearer ${OPEN_AI_API_KEY}`,
+        },
+      }
+    );
+
+    jsonWithNewlinesAndBackslashes = response.data.choices[0].message.content;
+
+    // Call the simplifyLanguage function to simplify the language in the cleaned JSON
+    const simplifiedJson = await simplifyLanguage(jsonWithNewlinesAndBackslashes);
+
+    // Remove newlines and backslashes from the JSON string
+    const cleanedJson = cleanUpJson(simplifiedJson);
+
+    res.json(cleanedJson);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });

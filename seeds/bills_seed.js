@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 
-const { fetchBillsFromAPI } = require("../src/utils/axios-calls.js"); // Adjust the path as needed
+const { fetchBillsFromAPI } = require("../src/utils/api.js"); // Adjust the path as needed
 
 exports.seed = async function (knex) {
   try {
