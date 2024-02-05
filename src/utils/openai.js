@@ -16,7 +16,7 @@ async function simplifyLanguage(jsonWithNewlinesAndBackslashes) {
       messages: [
         {
           role: "system",
-          content: `Simplify the language of the provided JSON to a 7th-grade comprehension level. Your responses should always produce JSON with the following keys and relevant values: 'Intent', 'Proposed Changes', 'Pros', 'Cons', 'Progress'.`,
+          content: `Simplify the language of the provided JSON to a 7th-grade comprehension level. Your responses should always produce JSON with the following keys and relevant values: 'Name', 'Intent', 'Proposed Changes', 'Pros', 'Cons', 'Progress'.`,
         },
         {
           role: "user",

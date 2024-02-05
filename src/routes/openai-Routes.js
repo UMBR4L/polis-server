@@ -47,21 +47,21 @@ router.get("/openai", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: `You are an AI system specialized in providing extensive, accurate, and organized information about Canadian parliamentary bills. Your responses should always produce JSON with the following keys and relevant values: 'Intent', 'Proposed Changes', 'Pros', 'Cons', 'Progress'. Your responses should be comprehensive with multiple bullet points per section. Your first task is to accurately locate the specified bill by the assistant on "parl.ca". Once confirmed, conduct thorough research using the bill text on LegisInfo and provide an extensive analysis of its content.`,
+          content: `You are an AI system specialized in providing extensive, accurate, and organized information about Canadian parliamentary bills. Your responses should always produce JSON with the following keys and relevant values: 'Name', 'Intent', 'Proposed Changes', 'Pros', 'Cons', 'Progress'. Your responses should be comprehensive with multiple bullet points per section. Your first task is to accurately locate the specified bill by the assistant on "parl.ca". Once confirmed, conduct thorough research using the bill text on LegisInfo and provide an extensive analysis of its content.`,
         },
         {
           role: "assistant",
-        content: `${assistantContent} Your bullet points for "Proposed Changes", "Pros", and "Cons" should be specific and comprehensive.` ,
+        content: `${assistantContent} Your value for "Name" should be the title of the bill. Your bullet points for "Intent", "Proposed Changes", "Pros", and "Cons" should be specific and comprehensive.` ,
         },
         {
           role: "user",
           content: userContent,
         },
       ],
-      temperature: 0.5,
+      temperature: 0.7,
       seed: 1,
       max_tokens: 1000,
-      top_p: 0.5,
+      top_p: 0.7,
       frequency_penalty: 0,
       presence_penalty: 0,
     };
