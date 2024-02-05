@@ -3,7 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables from .env
-const { fetchBillsFromAPI } = require("../utils/axios-calls.js");
+const { fetchBillsFromAPI } = require("../utils/api.js");
 
 const apiUrl = `${process.env.OPEN_PARLIAMENT_API_URL}/bills/`;
 const baseUrl = `${apiUrl}?`;
