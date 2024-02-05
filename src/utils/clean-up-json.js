@@ -10,7 +10,7 @@ function cleanUpJson(jsonString) {
           // Replace newlines and backslashes in string values
           obj[key] = obj[key].replace(/[\n\\]/g, "");
           // Split strings in arrays into individual sentences
-          if (key === "Proposed Changes" || key === "Pros" || key === "Cons") {
+          if (key === "Changes" || key === "Pros" || key === "Cons") {
             obj[key] = obj[key].split(". ");
           }
         } else if (typeof obj[key] === "object") {

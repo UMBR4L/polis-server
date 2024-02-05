@@ -3,11 +3,11 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("BillDetails", function (table) {
+  return knex.schema.createTable("BillDetails_", function (table) {
     table.increments("id").primary();
     table.string("bill_ID"); // Rename to match seed data
     table.string("session_ID"); // Rename to match seed data
-    table.string("title", 1000); // Keep the same name as in seed data
+    table.string("title", 100); // Keep the same name as in seed data
     table.date("introduced"); // Rename to match seed data
     table.text("intent"); // JSON content, so use text type
     table.text("proposed_changes"); // JSON content, so use text type
