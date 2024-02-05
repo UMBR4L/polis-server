@@ -11,7 +11,7 @@ const openai = new OpenAI({ apiKey: OPEN_AI_API_KEY });
 async function simplifyLanguage(jsonWithNewlinesAndBackslashes) {
   try {
     const requestData = {
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-3.5-turbo-1106",
       response_format: { type: "json_object" },
       messages: [
         {

@@ -70,7 +70,7 @@ router.get("/openai", async (req, res) => {
 
     // Define the request data for the OpenAI API
     const requestData = {
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-3.5-turbo-1106",
       response_format: { type: "json_object" },
       messages: [
         {
@@ -86,10 +86,10 @@ router.get("/openai", async (req, res) => {
           content: userContent,
         },
       ],
-      temperature: 0.7,
+      temperature: 1,
       seed: 1,
       max_tokens: 1000,
-      top_p: 0.7,
+      top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
     };
