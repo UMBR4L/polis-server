@@ -117,29 +117,24 @@ router.get("/openai", async (req, res) => {
     // Remove newlines and backslashes from the JSON string
     const cleanedJson = await cleanUpJson(simplifiedJson);
 
-    // // stringify the cleanedJson
-    // const cleanedJsonString = JSON.stringify(cleanedJson);
-
     // Parse the cleanedJson string into an object
-    const cleanedJsonObject = JSON.parse(cleanedJson);
+    const cleanedJsonObject = JSON.parse(jsonWithNewlinesAndBackslashes);
 
     // Access the 'Intent' property from the object
-const intentValue = cleanedJsonObject["Intent"];
+    const intentValue = cleanedJsonObject.Intent;
 
-    // // Handle special characters, such as quotes
-    // const escapedJsonString = cleanedJsonString.replace(/"/g, '\\"');
-    console.log("cleanedJson: " + cleanedJson);
-    console.log("intent: " + cleanedJsonObject["Intent"]);
+    console.log("Json: " + cleanedJsonObject);
+    console.log("intent: " + intentValue.Intent);
+
     // Create a request payload for DALL-E
     const dalleRequestData = {
       model: "dall-e-3",
-      prompt:
-        `A minimal, retro, elegant image that visually represents the following Canadian parliamentary bill's intentions: 
+      prompt: `A minimal, retro, elegant, borderless image that visually represents the following Canadian parliamentary bill's intentions: 
         ${intentValue} Show abstract symbols or elements representing the bill's themes.`,
       n: 1,
       size: "1024x1024",
     };
-    console.log ("dalleRequestData prompt: ", dalleRequestData.prompt);
+    console.log("dalleRequestData prompt: ", dalleRequestData.prompt);
 
     // Make a request to your DALL-E API to generate an image
     const dalleResponse = await axios.post(DALLE_API_URL, dalleRequestData, {
@@ -148,8 +143,9 @@ const intentValue = cleanedJsonObject["Intent"];
       },
     });
     // console.log(dalleResponse);
+    
     // Extract the image URL from DALL-E's response (adjust according to your API response structure)
-    console.log ("imageURL: ", dalleResponse.data);
+    console.log("imageURL: ", dalleResponse.data);
     const imageURL = dalleResponse.data.data[0].url;
 
     // You can now include imageURL in the final response or handle it as needed
