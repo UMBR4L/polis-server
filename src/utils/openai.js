@@ -39,9 +39,7 @@ async function simplifyLanguage(jsonWithNewlinesAndBackslashes) {
         },
       }
     );
-      console.log(response.data.choices[0].message.content)
-    //  // Convert the response to a JSON object
-    //  const responseObject = JSON.parse(response);
+    //   console.log(response.data.choices[0].message.content)
 
     return response.data.choices[0].message.content;
   } catch (error) {
