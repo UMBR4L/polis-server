@@ -1,17 +1,17 @@
 const axios = require("axios");
 const dotenv = require("dotenv");
-dotenv.config(); // Load environment variables from .env
+dotenv.config(); 
 
 const apiUrl = `${process.env.OPEN_PARLIAMENT_API_URL}/bills/`;
 const baseUrl = `${apiUrl}?`;
 
 const fetchBillsFromAPI = async (filterName) => {
   try {
-    // Define the limit and offset for pagination
+    // limit and offset for pagination
     const limit = 500;
     const offset = 0;
 
-    // Define the filter parameters based on the chosen filter
+    // filter parameters based on the chosen filter
     let filterParameters = "";
 
     switch (filterName) {
