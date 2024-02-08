@@ -91,10 +91,6 @@ DB_LOCAL_PASSWORD=your_database_password_here
 
 To interact with the server, you can use tools like Postman or make API requests from your frontend application.
 
-## Contributing
-
-I welcome contributions from the community! If you'd like to contribute to the project, please follow our Contributing Guidelines.
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
