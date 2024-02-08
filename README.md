@@ -36,9 +36,8 @@ Before you begin, ensure you have met the following requirements:
     npm install
 
 4. Create a .env file in the root directory and add the following environment variables:
-    PORT=3000                                   # Port to run the server
+    PORT=8000                                   # Port to run the server
 DATABASE_URL=your_database_connection_string    # Replace with your database URL
-JWT_SECRET_KEY=your_secret_key                  # Replace with your JWT secret key
 
 5. Run the server:
     npm start
@@ -47,9 +46,6 @@ JWT_SECRET_KEY=your_secret_key                  # Replace with your JWT secret k
 The Polis server provides a RESTful API. You can find detailed API documentation in the API Documentation file.
 
 To interact with the server, you can use tools like Postman or make API requests from your frontend application.
-
-## Contributing
-I welcome contributions from the community! If you'd like to contribute to the project, please follow our Contributing Guidelines.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
