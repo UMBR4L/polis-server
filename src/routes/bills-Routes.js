@@ -1,24 +1,25 @@
 const express = require("express");
 const axios = require("axios");
+const knex = require("knex")
 const router = express.Router();
 const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables from .env
+const knexConfig = require("../../knexfile.js");
 const { fetchBillsFromAPI } = require("../utils/api.js");
 
 const apiUrl = `${process.env.OPEN_PARLIAMENT_API_URL}/bills/`;
 const baseUrl = `${apiUrl}?`;
 
-// Define a route to fetch bills data from OpenParliament API with filtering
-router.get("/bills", async (req, res) => {
-  try {
-    // Get the filter query parameter from the request
-    const filterName = req.query.filter;
+// Create a Knex instance using the configuration from knexfile.js
+const db = knex(knexConfig);
 
-    // Call the fetchBillsFromAPI function and pass the filterName
-    const filteredData = await fetchBillsFromAPI(filterName);
+// Define a route to fetch bills data from database
+router.get("/bills", async (_req, res) => {
+  try {
+    const billsData = await db.select("*").from("bills");
 
     // Send the response data back to the client
-    res.json(filteredData);
+    res.json(billsData);
   } catch (error) {
     // Handle errors here
     console.error(error);
